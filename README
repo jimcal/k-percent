@@ -1,0 +1,5 @@
+Create a Yeoman scaffolding AngularJS app with Azure Mobile Service as backend. Aided with BBOS I obtained the gameday.pitchers table from 2013, and transfer that to Azure Mobile Service.
+
+Current functionality including search for pitchers name and sorting pitchers alphabetically by name or total strikeout count in 2013.
+
+
