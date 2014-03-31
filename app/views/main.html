@@ -1,0 +1,38 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">strikeout rate</h3>
+</div>
+
+<div class="container-fluid">
+
+	<div class="row-fluid" ng-controller="MainCtrl">
+	 <div class="span2">
+	 	<!-Sidebar content -->
+	 	Search: <input ng-model="query">
+	 	Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="-sum_so">Highest K count</option>
+      </select>
+	 </div>
+	 <div class="span10">
+	 	<ul class="pitchers">
+			<li ng-repeat="pitcher in Pitchers | filter:query | orderBy: orderProp ">
+			{{pitcher.name}}
+				<p>K% : {{pitcher.sum_so / pitcher.sum_bf *100 | number : 2}} %</p>
+				<p>Total K : {{pitcher.sum_so }} / Total Batter Faced : {{pitcher.sum_bf}} </p>
+				
+			</li>
+		</ul>
+	 </div>
+	
+</div>
+</div>
+
+<div class="footer">
+  <p>Thanks for the Yeoman team providing the foundation of this site.</p>
+</div>
